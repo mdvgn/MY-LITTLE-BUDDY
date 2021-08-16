@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_143010) do
+ActiveRecord::Schema.define(version: 2021_08_16_210611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,26 @@ ActiveRecord::Schema.define(version: 2021_08_16_143010) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_dwarves_on_user_id"
+  end
+
+  create_table "rents", force: :cascade do |t|
+    t.bigint "dwarf_id", null: false
+    t.bigint "user_id", null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dwarf_id"], name: "index_rents_on_dwarf_id"
+    t.index ["user_id"], name: "index_rents_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.integer "rating"
+    t.bigint "rent_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["rent_id"], name: "index_reviews_on_rent_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -64,4 +84,7 @@ ActiveRecord::Schema.define(version: 2021_08_16_143010) do
   add_foreign_key "dwarf_skills", "dwarves"
   add_foreign_key "dwarf_skills", "skills"
   add_foreign_key "dwarves", "users"
+  add_foreign_key "rents", "dwarves"
+  add_foreign_key "rents", "users"
+  add_foreign_key "reviews", "rents"
 end
