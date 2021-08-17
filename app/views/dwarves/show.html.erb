@@ -1,0 +1,10 @@
+<h1><%= @dwarf.nickname %></h1>
+<h2><%= @dwarf.size %> cm</h2>
+<h3><%= @dwarf.gender %></h3>
+<h3><%= @dwarf.description %></h3>
+<h3><%= @dwarf.location %></h3>
+<%  @dwarf.dwarf_skills.each do |skill| %>
+<h3><%=  Skill.find(skill.skill_id).skill %></h3>
+<% end %>
+
+<%= link_to "Add a skill", new_dwarf_dwarf_skill_path(@dwarf), class: "btn btn-primary" %>

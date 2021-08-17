@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2021_08_17_091906) do
     t.string "nickname"
     t.integer "size"
     t.string "gender"
-    t.string "photo"
     t.text "description"
     t.integer "price_per_hour"
     t.string "location"
@@ -97,7 +96,6 @@ ActiveRecord::Schema.define(version: 2021_08_17_091906) do
     t.string "last_name"
     t.boolean "dwarf"
     t.integer "age"
-    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

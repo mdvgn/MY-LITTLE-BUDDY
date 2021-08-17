@@ -1,4 +1,9 @@
-<% @dwarves.each do |dwarf| %>
-  <h1><%= dwarf.nickname %></h1>
-<% end %>
-<h2>INDEX</h2>
+
+<div class="container">
+  <div class="cards-dwarf">
+      <% @dwarves.each do |dwarf| %>
+        <%= render 'shared/card', dwarf: dwarf%>
+      <% end %>
+  </div>
+</div>
+
