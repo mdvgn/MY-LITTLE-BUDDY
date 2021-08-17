@@ -1,3 +1,4 @@
 class Skill < ApplicationRecord
-  belongs_to :dwarf_skill
+  has_many :dwarf_skills, dependent: :destroy
+  has_many :dwarves, through: :dwarf_skills
 end
