@@ -1,5 +1,9 @@
+<hr>
 <h1><%= @dwarf.nickname %></h1>
 <h2><%= @dwarf.size %> cm</h2>
 <h3><%= @dwarf.gender %></h3>
 <h3><%= @dwarf.description %></h3>
 <h3><%= @dwarf.location %></h3>
+<% @dwarf.photos.each do |photo| %>
+<%= cl_image_tag photo.key %>
+<% end %>
