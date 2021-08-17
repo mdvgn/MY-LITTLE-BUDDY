@@ -6,7 +6,7 @@
                   required: true,
                   input_html: { autocomplete: "nickname" } %>
       <%= f.input :size,
-                  collection: 80..150, prompt: "Select your size"%>
+                  collection: 80..150, prompt: "Select your size in cm"%>
       <%= f.input :gender,
                   required: true, collection: [:Male, :Female, :Shemale, :Neutrale],
                   input_html: { autocomplete: "gender" }%>
@@ -21,9 +21,8 @@
                   required: true,
                   input_html: { autocomplete: "location" } %>
 
-
     </div>
-
+    <hr>
     <div class="form-actions">
       <%= f.button :submit, "Create", class: "btn btn-primary" %>
     </div>
