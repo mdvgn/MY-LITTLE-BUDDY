@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     @review.update(comment: params[:review][:comment], rating: params[:review][:rating])
-  redirect_to article_path(@article)
+  redirect_to review_path(@review)
   end
 
   def delete
