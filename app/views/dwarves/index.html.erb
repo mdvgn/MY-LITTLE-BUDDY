@@ -1,10 +1,7 @@
-<% @dwarves.each do |dwarf| %>
-  <h1><%= dwarf.nickname %></h1>
-  <%= link_to "See my dwarf profile", dwarf_path(dwarf), class: "btn btn-primary" %>
-  <%= link_to "Edit my dwarf profile", edit_dwarf_path(dwarf), class: "btn btn-success" %>
-  <%= link_to "Delete my dwarf profile",
-            dwarf_path(dwarf),
-            method: :delete,
-            data: { confirm: "Are you sure?" },
-            class: "btn btn-danger" %>
-<% end %>
+<div class="container">
+  <div class="cards-dwarf">
+      <% @dwarves.each do |dwarf| %>
+        <%= render 'shared/card', dwarf: dwarf%>
+      <% end %>
+  </div>
+</div>
