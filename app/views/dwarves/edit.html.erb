@@ -14,9 +14,7 @@
       <%= f.input :description,
                   required: true,
                   input_html: { autocomplete: "description" } %>
-      <%= f.input :photo,
-                  required: true,
-                  input_html: { autocomplete: "photo" } %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.input :price_per_hour,
                   required: true,
                   input_html: { autocomplete: "price per hour" } %>
