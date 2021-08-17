@@ -2,7 +2,7 @@ class SkillsController < ApplicationController
   class ReviewsController < ApplicationController
 
   def index
-    @skill = Skill.all
+    @skills = Skill.all
   end
 
   def show
