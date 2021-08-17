@@ -15,7 +15,7 @@
         </li>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://standoff2.shop/acc/img/user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag current_user.avatar.key, :gravity=>"faces", :crop=>"thumb", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
       <% if current_user && current_user.dwarf == true %>
           <%= link_to "create my dwarf profile", new_dwarf_path, class: "nav-link"  %>
