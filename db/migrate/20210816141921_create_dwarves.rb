@@ -4,7 +4,6 @@ class CreateDwarves < ActiveRecord::Migration[6.0]
       t.string :nickname
       t.integer :size
       t.string :gender
-      t.string :photo
       t.text :description
       t.integer :price_per_hour
       t.string :location

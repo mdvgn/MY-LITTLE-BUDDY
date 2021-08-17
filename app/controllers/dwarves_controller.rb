@@ -40,6 +40,6 @@ class DwarvesController < ApplicationController
   private
 
   def dwarf_params
-    params.require(:dwarf).permit(:nickname, :size, :gender, :description, :photos, :price_per_hour, :location)
+    params.require(:dwarf).permit(:nickname, :size, :gender, :description, :price_per_hour, :location, photos: [])
   end
 end

@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2021_08_17_091906) do
     t.string "nickname"
     t.integer "size"
     t.string "gender"
-    t.string "photo"
     t.text "description"
     t.integer "price_per_hour"
     t.string "location"
