@@ -1,17 +1,20 @@
 .banner {
+  position: relative;
   background-size: cover;
   background-position: center;
   padding: 180px 0;
-  height: 700px;
+  height: 600px;
+}
+
+.banner-content-container {
+  position: absolute;
+  top: 350px;
+  margin: 0px 10%;
 }
 
 .banner h1 {
-  position: static;
-  top: 400px;
-  left: 30px;
-  margin: 100px;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
   font-size: 64px;
   font-weight: bold;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
