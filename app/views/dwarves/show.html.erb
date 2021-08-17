@@ -3,6 +3,9 @@
 <h3><%= @dwarf.gender %></h3>
 <h3><%= @dwarf.description %></h3>
 <h3><%= @dwarf.location %></h3>
+<% @dwarf.photos.each do |photo| %>
+<%= cl_image_tag photo.key %>
+<% end %>
 <%  @dwarf.dwarf_skills.each do |skill| %>
 <h3><%=  Skill.find(skill.skill_id).skill %></h3>
 <% end %>
