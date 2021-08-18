@@ -2,7 +2,7 @@
 <h1>MY RENTS</h1>
 <hr>
 <% @rents.each do |rent| %>
- <h2>Widget hired : <%= rent.dwarf.nickname %> </h2>
+ <h2>Midget hired : <%= rent.dwarf.nickname %> </h2>
   <h2>From <%= rent.end_date %> </h2>
  <h2>To <%= rent.start_date %> </h2>
  <% if Review.where(rent_id: rent.id) == [] %>

@@ -2,10 +2,10 @@
   position: relative;
 
   &:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: ($height / $width) * 100%;
+    // display: block;
+    // content: "";
+    // width: 100%;
+    // padding-top: ($height / $width) * 100%;
   }
 
   > .bigimg {
@@ -93,6 +93,7 @@ section {
     white-space: nowrap;
     box-sizing: border-box;
     display: flex;
+    height: 600px;
 }
 
 .carousel__slide {
