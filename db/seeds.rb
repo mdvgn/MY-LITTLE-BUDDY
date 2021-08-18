@@ -1,5 +1,6 @@
 User.destroy_all if Rails.env.development?
 Skill.destroy_all if Rails.env.development?
+Dwarf.destroy_all if Rails.env.development?
 
 User.create!(
   email: "pass-partout@gmail.com",
@@ -36,6 +37,26 @@ User.create!(
   dwarf: false,
   age: 39,
 )
+
+Dwarf.create!(
+  nickname: "Gimli",
+  size: 140,
+  gender: "male",
+  description: "Je suis un nain très cochon et j'aime bien etre lancé contre des murs",
+  price_per_hour: 69,
+  location: "Paris",
+)
+
+Dwarf.create!(
+  nickname: "Frodon",
+  size: 130,
+  gender: "male",
+  description: "Enduisez-moi de vaseline et mettez moi par terre, je suis une limace!",
+  price_per_hour: 420,
+  location: "Nice",
+)
+
+puts "#{Dwarf.count} midgets created"
 
 skills = %w(Lap\ dancer Stuntman Canonman Flying\ Midget Midget\ Tossing)
 

@@ -6,3 +6,18 @@
       <% end %>
   </div>
 </div>
+
+<h1>Find your midget!</h1>
+<%= simple_form_for :dwarves, method: :get,
+                            defaults: { required: false } do |f| %>
+  <%= f.input :search, label: "Search by activity or location",
+                       input_html: { name: 'search',
+                                     value: params.dig(:search) } %>
+  <%= f.submit "Find your midget!" %>
+<% end %>
+
+<ul>
+  <% @dwarves.each do |dwarf| %>
+    <li> <%= dwarf.skill %> | <%= dwarf.location %> </li>
+  <% end %>
+</ul>

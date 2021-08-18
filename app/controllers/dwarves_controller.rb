@@ -1,6 +1,10 @@
 class DwarvesController < ApplicationController
   def index
-    @dwarves = Dwarf.all
+    if params[:search].present?
+      @dwarves = Dwarf.joins(:skills).where(skills: { skill: params[:search]})
+    else
+      @dwarves = Dwarf.all
+    end
   end
 
   def new
