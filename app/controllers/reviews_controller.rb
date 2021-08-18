@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
       redirect_to :action => 'index'
     else
       render :action => 'new'
+    end
   end
 
   def edit
