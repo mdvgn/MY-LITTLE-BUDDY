@@ -23,6 +23,7 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
+import 'stylesheets/application';
 import "bootstrap";
 import { showNavbar } from "../components/navbar"
 import { moveSearchbar } from "../components/searchbar"
