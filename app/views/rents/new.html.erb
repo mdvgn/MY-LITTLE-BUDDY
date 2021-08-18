@@ -1,0 +1,10 @@
+<div class="form-container">
+
+<% dwarf = Dwarf.find(params[:dwarf_id]) %>
+<h1>Rent <%= dwarf.nickname %></h1>
+<%= simple_form_for [@dwarf, @rent] do |f| %>
+  <%= f.input :start_date, as: :date%>
+  <%= f.input :end_date, as: :date%>
+  <%= f.submit 'Hire this midget', class: "btn btn-primary" %>
+<% end %>
+</div>
