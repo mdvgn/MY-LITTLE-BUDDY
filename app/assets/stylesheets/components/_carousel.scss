@@ -47,7 +47,6 @@ section {
     max-width: 1044px;
     margin: 0 auto;
     padding: 0 20px;
-    background-color: black;
 }
 
 .carousel {
@@ -184,3 +183,12 @@ section {
         height: 100px;
         object-fit: cover;
     }
+
+figcaption a {
+  color: tomato;
+  transition: color 0.5s ease;
+  &:hover {
+    color: HSLA(345, 100%, 60%, 1.00);
+    text-decoration: none;
+  }
+}
