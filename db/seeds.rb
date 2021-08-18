@@ -21,7 +21,7 @@ pass = Dwarf.create!(
 pass.photos.attach(io: File.open('app/assets/images/home/home/top_7/passe-partout.jpg'), filename: 'passpartout.jpg', content_type:'image/jpg')
 
 mimi = Dwarf.create!(
-  nickname: "mimimaty",
+  nickname: "Mimilf Mathy",
   size: 80,
   gender: "female",
   description: "naine gardienne",
@@ -91,24 +91,6 @@ User.create!(
   last_name: "Diesel",
   is_dwarf: false,
   age: 39,
-)
-
-Dwarf.create!(
-  nickname: "Gimli",
-  size: 140,
-  gender: "male",
-  description: "Je suis un nain très cochon et j'aime bien etre lancé contre des murs",
-  price_per_hour: 69,
-  location: "Paris",
-)
-
-Dwarf.create!(
-  nickname: "Frodon",
-  size: 130,
-  gender: "male",
-  description: "Enduisez-moi de vaseline et mettez moi par terre, je suis une limace!",
-  price_per_hour: 420,
-  location: "Nice",
 )
 
 puts "#{Dwarf.count} midgets created"
