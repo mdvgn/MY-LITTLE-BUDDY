@@ -22,7 +22,7 @@
             <%= image_tag "https://image.flaticon.com/icons/png/512/149/149071.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <% if current_user && current_user.is_dwarf == true %>
+        <% if current_user && current_user.dwarf == true %>
           <% if Dwarf.find_by_user_id(current_user.id) == nil %>
           <%= link_to "Create my dwarf profile", new_dwarf_path, class: "dropdown-item" %>
           <% else  %>
