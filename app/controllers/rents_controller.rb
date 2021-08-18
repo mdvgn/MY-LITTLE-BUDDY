@@ -1,4 +1,8 @@
 class RentsController < ApplicationController
+  def index
+    @rents = Rent.all
+  end
+
   def new
     @rent = Rent.new
     @dwarf = Dwarf.find(params[:dwarf_id])
