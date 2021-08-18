@@ -1,6 +1,12 @@
 class DwarvesController < ApplicationController
   def index
     @dwarves = Dwarf.all
+    @markers = @dwarves.geocoded.map do |dwarf|
+    {
+      lat: flat.latitude,
+      lng: flat.longitude
+    }
+    end
   end
 
   def new
