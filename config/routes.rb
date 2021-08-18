@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :rents, only: [:new, :create]
   end
   resources :rents, only: [:destroy, :update, :show] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :index, :show]
   end
   resources :dwarves do
     resources :dwarf_skills

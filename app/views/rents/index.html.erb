@@ -5,6 +5,7 @@
  <h2>Widget hired : <%= rent.dwarf.nickname %> </h2>
   <h2>From <%= rent.end_date %> </h2>
  <h2>To <%= rent.start_date %> </h2>
+ <%= link_to "Add a review", new_rent_review_path(rent.id), class: "btn btn-warning" %>
  <%= link_to "Cancel",
             rent_path(rent),
             method: :delete,
