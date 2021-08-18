@@ -1,8 +1,11 @@
-<div class="cards-dwarf-container">
-<h1>Discover our finest midget</h1>
-  <div class="cards-dwarf">
-      <% @dwarves.each do |dwarf| %>
-        <%= render 'shared/card', dwarf: dwarf%>
-      <% end %>
+<div class="dwarves-index-search-bar">
+  <%= render 'shared/search_bar' %>
+  <div class="cards-dwarf-container">
+    <h1>Discover our finest midget</h1>
+    <div class="cards-dwarf">
+        <% @dwarves.each do |dwarf| %>
+          <%= render 'shared/card', dwarf: dwarf%>
+        <% end %>
+    </div>
   </div>
 </div>
