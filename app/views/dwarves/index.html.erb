@@ -3,7 +3,6 @@
   <div class="cards-dwarf">
       <% @dwarves.each do |dwarf| %>
         <%= render 'shared/card', dwarf: dwarf%>
-      <%= link_to 'Hire me', new_dwarf_rent_path(dwarf.id), class: "btn btn-primary"  %>
       <% end %>
   </div>
 </div>
