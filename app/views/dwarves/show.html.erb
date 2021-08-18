@@ -18,5 +18,18 @@
       </div>
       <% end %>
     </div>
+    <div class="reviews_container">
+    <% rents = Rent.where(dwarf_id: @dwarf.id) %>
+     <% rents.each do |rent| %>
+       <% reviews = Review.where(rent_id: rent.id) %>
+       <% reviews.each do |review| %>
+       <h2><%= review[:comment] %></h2>
+       <% stars = review[:rating].to_i  %>
+      <% stars.times do %>
+      <i class="fas fa-star"></i>
+     <% end %>
+     <% end %>
+     <% end %>
+    </div>
   </div>
 </div>
