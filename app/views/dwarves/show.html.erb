@@ -1,13 +1,17 @@
-<h1><%= @dwarf.nickname %></h1>
-<h2><%= @dwarf.size %> cm</h2>
-<h3><%= @dwarf.gender %></h3>
-<h3><%= @dwarf.description %></h3>
-<h3><%= @dwarf.location %></h3>
-<% @dwarf.photos.each do |photo| %>
-<%= cl_image_tag photo.key %>
-<% end %>
-<%  @dwarf.dwarf_skills.each do |skill| %>
-<h3><%=  Skill.find(skill.skill_id).skill %></h3>
-<% end %>
-
-<%= link_to "Add a skill", new_dwarf_dwarf_skill_path(@dwarf), class: "btn btn-primary" %>
+<div class="show-container">
+  <div class="show-img">
+  <% @dwarf.photos.each do |photo| %>
+  <%= cl_image_tag photo.key %>
+  <% end %>
+  </div>
+  <div class="show-infos">
+  <h1><%= @dwarf.nickname %></h1>
+  <h2>Size : <%= @dwarf.size %> cm</h2>
+  <h3>Gender : <%= @dwarf.gender %></h3>
+  <h3>Description : <%= @dwarf.description %></h3>
+  <h3>Location : <%= @dwarf.location %></h3>
+  <%  @dwarf.dwarf_skills.each do |skill| %>
+  <h3><%=  Skill.find(skill.skill_id).skill %></h3>
+  <% end %>
+  </div>
+</div>
