@@ -1,0 +1,13 @@
+<h1>MY RENTS</h1>
+<hr>
+<% @rents.each do |rent| %>
+ <h2>Widget hired : <%= rent.dwarf.nickname %> </h2>
+  <h2>From <%= rent.end_date %> </h2>
+ <h2>To <%= rent.start_date %> </h2>
+ <%= link_to "Cancel",
+            rent_path(rent),
+            method: :delete,
+            class: "btn btn-danger",
+            data: { confirm: "Are you sure?" } %>
+ <hr>
+<% end %>

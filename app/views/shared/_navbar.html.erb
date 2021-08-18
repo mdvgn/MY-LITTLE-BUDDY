@@ -29,6 +29,7 @@
           <%= link_to "Edit my dwarf profile", edit_dwarf_path(Dwarf.find_by_user_id(current_user.id)), class: "dropdown-item" %>
           <% end  %>
           <%= link_to "See the dwarves", dwarves_path, class: "dropdown-item" %>
+          <%= link_to "See my rents", user_rents_path(current_user.id), class: "dropdown-item" %>
         <% end %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
