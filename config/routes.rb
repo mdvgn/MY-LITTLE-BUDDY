@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   resources :dwarves do
     resources :dwarf_skills
   end
+  resources :users do
+    resources :rents, only: [:index, :show]
+  end
 end

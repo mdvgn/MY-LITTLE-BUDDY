@@ -1,34 +1,31 @@
  .cards-dwarf-container {
    margin-top: 100px;
    padding: 0 10%;
- }
-
-
-
- .cards-dwarf{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  flex-grow: 1;
-  justify-items: center;
   }
-@media (max-width: 900px) {
- .cards-dwarf{
-  grid-template-columns: 1fr 1fr;
+
+  .cards-dwarf{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-grow: 1;
+    justify-items: center;
   }
-}
-
-@media (max-width: 500px) {
- .cards-dwarf{
-  grid-template-columns: 1fr;
+  @media (max-width: 900px) {
+    .cards-dwarf{
+      grid-template-columns: 1fr 1fr;
+    }
   }
-}
 
+  @media (max-width: 500px) {
+    .cards-dwarf{
+      grid-template-columns: 1fr;
+    }
+  }
 
-.card-trip {
+  .card-trip {
   justify-content: space-between;
   margin: 10px 10px;
   width: 300px;
-  height: 300px;
+  height: 400px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -87,4 +84,10 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.hire-btn {
+  position: relative;
+  left: 30%;
+  margin-top: 30px;
 }
