@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/edit'
   get 'dwarf_skills/new'
   get 'dwarf_skills/create'
   get 'dwarf_skills/edit'
