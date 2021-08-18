@@ -23,8 +23,8 @@
 
   .card-trip {
   justify-content: space-between;
-  margin: 10px 10px;
-  width: 300px;
+  margin: 15px 10px;
+  width: 350px;
   height: 400px;
   overflow: hidden;
   background: white;
@@ -55,9 +55,13 @@
   }
 }
 
+.card-trip-pricing {
+  width: 100px;
+  text-align: right;
+}
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
   color: black;
