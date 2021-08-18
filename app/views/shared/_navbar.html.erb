@@ -28,6 +28,7 @@
           <% else  %>
           <%= link_to "Edit my dwarf profile", edit_dwarf_path(Dwarf.find_by_user_id(current_user.id)), class: "dropdown-item" %>
           <% end  %>
+          <hr>
         <% end %>
           <%= link_to "Edit my user profile", edit_user_path(current_user.id), class: "dropdown-item" %>
           <%= link_to "See the dwarves", dwarves_path, class: "dropdown-item" %>
