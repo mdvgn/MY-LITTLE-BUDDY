@@ -1,12 +1,19 @@
 <form action="dwarves" method="get">
   <div class="product-search">
       <div class="search-element">
-          <label class="search-label">Activity ?</label>
-          <input class="search-input" type="text" autocomplete="on" placeholder="Ex: Midget tossing" name="search">
+            <label class="search-label">Activité ?</label>
+            <datalist id="suggestions">
+                <option>Lap dance</option>
+                <option>Cascadeur</option>
+                <option>Nain-canon</option>
+                <option>Lancé de nain</option>
+                <option>Mobilier</option>
+            </datalist>
+          <input class="search-input" list="suggestions" placeholder="Dérouler" autocomplete="on" name="search[skill]">
       </div>
       <div class="search-element">
-          <label class="search-label">Location ?</label>
-          <input class="search-input" type="text" placeholder="City, State" class="" autocomplete="on" name="location">
+          <label class="search-label">Ville ?</label>
+          <input class="search-input" type="text" placeholder="Ex:Paris" class="" autocomplete="on" name="search[location]">
       </div>
       <input type="submit" name="commit" class="search-button"></a>
   </div>
