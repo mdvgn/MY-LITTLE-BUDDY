@@ -6,9 +6,9 @@ class DwarfSkillsController < ApplicationController
 
   def create
     @dwarf = Dwarf.find(params[:dwarf_id])
-    @skills = Skill.where(id: params[:dwarf_skill][:skill])
+    @skills = Skill.where(skill: params[:dwarf_skill][:skill])
     @skills.each do |skill|
-      dwarf_skill = DwarfSkill.new(dwarf: @dwarf, skill: skill)
+      dwarf_skill = DwarfSkill.new(dwarf_id: @dwarf.id, skill_id: skill.id)
       dwarf_skill.save
     end
     redirect_to dwarf_path(@dwarf)

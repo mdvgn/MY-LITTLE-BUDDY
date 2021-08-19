@@ -1,12 +1,15 @@
 class DwarvesController < ApplicationController
   def index
-    @dwarves = Dwarf.all
-    @markers = @dwarves.geocoded.map do |dwarf|
-    {
-      lat: dwarf.latitude,
-      lng: dwarf.longitude,
-      info_window: render_to_string(partial: "info_window", locals: { dwarf: dwarf })
-    }
+    if params[:search].present?
+      @dwarves = Dwarf.joins(:skills).where(skills: { skill: params[:search]})
+    else
+      @dwarves = Dwarf.all
+      @markers = @dwarves.geocoded.map do |dwarf|
+      {
+        lat: dwarf.latitude,
+        lng: dwarf.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { dwarf: dwarf })
+      }
     end
   end
 

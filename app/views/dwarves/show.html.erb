@@ -1,17 +1,49 @@
 <div class="show-container">
-  <div class="show-img">
-  <% @dwarf.photos.each do |photo| %>
-  <%= cl_image_tag photo.key %>
-  <% end %>
+    <h1><%= @dwarf.nickname %></h1>
+  <div class="show-content">
+    <div class="show-img">
+      <% @dwarf.photos.each do |photo| %>
+        <%= cl_image_tag photo.key %>
+      <% end %>
+    </div>
+    <div class="show-infos">
+      <h2><%= @dwarf.size %> cm</h2>
+      <h3 id = "gender"><%= @dwarf.gender %></h3>
+      <h4>"<%= @dwarf.description %>"</h4>
+      <h3><i class="fas fa-map-marker-alt"></i> <%= @dwarf.location %></h3>
+      <hr>
+      <div class="show-skills-container">
+        <%  @dwarf.dwarf_skills.each do |skill| %>
+        <div class="skill">
+          <%=  Skill.find(skill.skill_id).skill %>
+        </div>
+        <% end %>
+      </div>
+        <i class="far fa-comment"></i>
+        <% rents = Rent.where(dwarf_id: @dwarf.id) %>
+          <% rents.each do |rent| %>
+            <% reviews = Review.where(rent_id: rent.id) %>
+            <% reviews.each do |review| %>
+        <div class="reviews_container">
+              <div class="show-comment">
+                <h4>"<%= review[:comment] %>"</h4>
+
+              </div>
+              <% stars = review[:rating].to_i  %>
+              <% stars.times do %>
+              <div class="show-stars">
+                <i class="fas fa-star"></i>
+              </div>
+            <% end %>
+        </div>
+          <% end %>
+        <% end %>
+          <% if current_user && @dwarf.user_id != current_user.id  %>
+        <div class="show-hire-btn">
+          <%= link_to 'Hire me', new_dwarf_rent_path(@dwarf.id), class: "btn btn-primary", id: "show-hire-btn"  %>
+        </div>
+      <% end  %>
+    </div>
   </div>
-  <div class="show-infos">
-  <h1><%= @dwarf.nickname %></h1>
-  <h2>Size : <%= @dwarf.size %> cm</h2>
-  <h3>Gender : <%= @dwarf.gender %></h3>
-  <h3>Description : <%= @dwarf.description %></h3>
-  <h3>Location : <%= @dwarf.location %></h3>
-  <%  @dwarf.dwarf_skills.each do |skill| %>
-  <h3><%=  Skill.find(skill.skill_id).skill %></h3>
-  <% end %>
-  </div>
+ <%= link_to 'Back to dwarf collection', dwarves_path, class: "btn btn-warning", id: "show-back-btn"  %>
 </div>
