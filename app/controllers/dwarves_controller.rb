@@ -1,7 +1,17 @@
 class DwarvesController < ApplicationController
   def index
-    if params[:search].present?
-      @dwarves = Dwarf.global_search(params[:search])
+    search = params[:search]
+    if search.present?
+      if search[:skill].empty? && search[:location]
+        @dwarves = Dwarf.global_search(search[:location])
+      elsif search[:skill] && search[:location].empty?
+        @dwarves = Dwarf.global_search(search[:skill])
+      else
+        dwarf_skill = Dwarf.global_search(search[:skill])
+        dwarf_location = Dwarf.global_search(search[:location])
+        @dwarves = (dwarf_skill & dwarf_location)
+      end
+      # @dwarves = Dwarf.joins(:skills).where(skills: { skill: params[:search]})
     else
       @dwarves = Dwarf.all
       @markers = @dwarves.geocoded.map do |dwarf|
@@ -52,6 +62,6 @@ class DwarvesController < ApplicationController
   private
 
   def dwarf_params
-    params.require(:dwarf).permit(:nickname, :size, :gender, :description, :price_per_hour, :location, :latitude, :longitude, photos: [])
+    params.require(:dwarf).permit(:nickname, :size, :gender, :description, :price_per_hour, :location, photos: [])
   end
 end

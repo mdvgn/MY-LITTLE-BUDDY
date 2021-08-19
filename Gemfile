@@ -35,6 +35,7 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'pg_search'
+gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 
 group :development, :test do
   gem 'pry-byebug'
