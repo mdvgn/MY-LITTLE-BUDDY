@@ -95,7 +95,7 @@ User.create!(
 
 puts "#{Dwarf.count} midgets created"
 
-skills = %w(Lap\ dancer Stuntman Canonman Flying\ Midget Midget\ Tossing)
+skills = %w(Lap\ dance Cascadeur Nain-canon Lancé\ de\ nain Mobilier)
 
 skills.each do |skill|
   Skill.create!(skill: skill)

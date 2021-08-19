@@ -2,12 +2,12 @@
   <div class="rent">
     <div class="rent-form">
       <% dwarf = Dwarf.find(params[:dwarf_id]) %>
-      <h1>Rent <%= dwarf.nickname %></h1>
+      <h1>Louer <%= dwarf.nickname %></h1>
       <hr>
       <%= simple_form_for [@dwarf, @rent] do |f| %>
-        <h2>Start time</h2>
+        <h2>Date de début</h2>
         <%= f.datetime_field :start_date, as: :date%>
-        <h2>End time</h2>
+        <h2>Date de fin</h2>
         <%= f.datetime_field :end_date, as: :date%>
         <hr>
         <%= f.submit 'Hire this midget', class: "btn btn-primary" %>

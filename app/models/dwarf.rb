@@ -8,8 +8,8 @@ class Dwarf < ApplicationRecord
   validates :nickname, presence: true, uniqueness: true
   validates :user_id, uniqueness: true
 
-  pg_search_scope :global_search,
-                  against: [ :location ],
+  # multisearchable against: [:skill, :location]
+  pg_search_scope :global_search, against: [:location],
                   associated_against: {
                     skills: [ :skill]
                   },

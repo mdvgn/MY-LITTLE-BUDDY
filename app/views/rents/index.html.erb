@@ -1,10 +1,10 @@
 <div class="form-container">
-<h1>MY RENTS</h1>
+<h1>MES LOCATIONS</h1>
 <hr>
 <% @rents.each do |rent| %>
- <h2>Midget hired : <%= rent.dwarf.nickname %> </h2>
-  <h2>From <%= rent.end_date %> </h2>
- <h2>To <%= rent.start_date %> </h2>
+ <h2>Nain à louer: <%= rent.dwarf.nickname %> </h2>
+  <h2>Du <%= rent.end_date %> </h2>
+ <h2>Jusqu'au <%= rent.start_date %> </h2>
  <% if Review.where(rent_id: rent.id) == [] %>
  <%= link_to "Add a review", new_rent_review_path(rent.id), class: "btn btn-warning" %>
  <%= link_to "Cancel",

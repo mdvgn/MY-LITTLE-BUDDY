@@ -1,5 +1,5 @@
 <div class="form-container">
-<h1>Add a skill</h1>
+<h1>Ajoute ton don de nain</h1>
 <%= simple_form_for [@dwarf, @dwarf_skill] do |f| %>
   <%= f.input :skill, collection: Skill.all.map{|skill| skill.skill}, input_html: { multiple: true, class: 'multiple-select' }, include_hidden: false %>
   <%= f.submit 'Add a skill', class: "btn btn-primary" %>
