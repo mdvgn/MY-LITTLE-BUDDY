@@ -29,8 +29,11 @@ class DwarvesController < ApplicationController
 
   def update
     @dwarf = Dwarf.find(params[:id])
+    # photos = @dwarf.photos
     @dwarf.update(dwarf_params)
-
+    # @dwarf.photos.push(photos)
+    # raise
+    # @dwarf.update(photos: @dwarf.photos)
     redirect_to dwarves_path
   end
 
