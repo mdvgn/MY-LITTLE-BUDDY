@@ -1,15 +1,17 @@
 class DwarvesController < ApplicationController
   def index
     if params[:search].present?
-      @dwarves = Dwarf.joins(:skills).where(skills: { skill: params[:search]})
+      @dwarves = Dwarf.global_search(params[:search])
     else
       @dwarves = Dwarf.all
       @markers = @dwarves.geocoded.map do |dwarf|
-      {
-        lat: dwarf.latitude,
-        lng: dwarf.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { dwarf: dwarf })
-      }
+        {
+          lat: dwarf.latitude,
+          lng: dwarf.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { dwarf: dwarf }),
+          image_url: helpers.asset_url('/home/fabrice/code/Mdvgn/MY-LITTLE-BUDDY/app/assets/images/logo.png')
+        }
+        end
     end
   end
 
@@ -50,6 +52,6 @@ class DwarvesController < ApplicationController
   private
 
   def dwarf_params
-    params.require(:dwarf).permit(:nickname, :size, :gender, :description, :price_per_hour, :location, photos: [])
+    params.require(:dwarf).permit(:nickname, :size, :gender, :description, :price_per_hour, :location, :latitude, :longitude, photos: [])
   end
 end
