@@ -25,12 +25,14 @@
                           <%= dwarf.description %>
                           <div class="reviews_container">
                             <% rents = Rent.where(dwarf_id: dwarf.id) %>
-                            <% rents.each do |rent| %>
-                              <% reviews = Review.where(rent_id: rent.id) %>
-                              <% review = reviews.last %>
-                              <% stars = review[:rating].to_i  %>
-                                <% stars.times do %>
-                                  <i class="fas fa-star"></i>
+                              <% rents.each do |rent| %>
+                                <% reviews = Review.where(rent_id: rent.id) %>
+                                <% review = reviews.last %>
+                            <% if  review != nil %>
+                                <% stars = review[:rating].to_i  %>
+                                  <% stars.times do %>
+                                    <i class="fas fa-star"></i>
+                            <% end %>
                                 <% end %>
                               <% end %>
                           </div>

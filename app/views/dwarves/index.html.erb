@@ -1,3 +1,4 @@
+
 <div class="dwarves-index-search-bar">
   <%= render 'shared/search_bar' %>
   <div class="cards-dwarf-container">
@@ -6,6 +7,11 @@
         <% @dwarves.each do |dwarf| %>
           <%= render 'shared/card', dwarf: dwarf%>
         <% end %>
+    </div>
+    <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
 </div>
