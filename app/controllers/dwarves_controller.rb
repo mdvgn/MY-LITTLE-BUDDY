@@ -3,8 +3,9 @@ class DwarvesController < ApplicationController
     @dwarves = Dwarf.all
     @markers = @dwarves.geocoded.map do |dwarf|
     {
-      lat: flat.latitude,
-      lng: flat.longitude
+      lat: dwarf.latitude,
+      lng: dwarf.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { dwarf: dwarf })
     }
     end
   end
