@@ -53,7 +53,7 @@ section {
     display: block;
     text-align: left;
     position: relative;
-    margin-bottom: 22px;
+    // margin-bottom: 22px;
 
     > input {
         clip: rect(1px, 1px, 1px, 1px);
@@ -191,4 +191,14 @@ figcaption a {
     color: HSLA(345, 100%, 60%, 1.00);
     text-decoration: none;
   }
+}
+
+
+.top-carousel {
+  height: 100px;
+  width: 100px;
+  color: tomato;
+  text-align: center;
+  padding-top: 25px;
+  padding-left: 25px;
 }
