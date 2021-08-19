@@ -1,17 +1,21 @@
  .cards-dwarf-container {
    margin-top: 50px;
    padding: 0 10%;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   flex-grow: 1;
+   justify-items: center;
   }
 
   .cards-dwarf{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     flex-grow: 1;
     justify-items: center;
   }
   @media (max-width: 900px) {
     .cards-dwarf{
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
     }
   }
 

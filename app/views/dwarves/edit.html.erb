@@ -1,5 +1,5 @@
 <div class="form-container">
-  <h2>Update my dwarf profile</h2>
+  <h2>Mettre à jour mon profil</h2>
   <%= simple_form_for(@dwarf) do |f| %>
     <div class="form-inputs">
       <%= f.input :nickname,
@@ -21,6 +21,14 @@
       <%= f.input :location,
                   required: true,
                   input_html: { autocomplete: "location" } %>
+    </div>
+    <div class="show-skills-container">
+      <p>Mes usages</p>
+        <%  @dwarf.dwarf_skills.each do |skill| %>
+          <div class="skill">
+            <%=  Skill.find(skill.skill_id).skill %>
+          </div>
+        <% end %>
     </div>
   <%= link_to "Add a skill", new_dwarf_dwarf_skill_path(@dwarf), class: "btn btn-primary" %>
 
