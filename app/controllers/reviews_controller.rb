@@ -10,14 +10,18 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @rent = Rent.find(params[:rent_id])
   end
 
   def create
-    @review = Review.new(params)
+    @rent = Rent.find(params[:rent_id])
+    @review = Review.new(review_params)
+    @review[:rent_id] = @rent.id
     if @review.save
-      redirect_to :action => 'index'
+      redirect_to dwarves_path
     else
       render :action => 'new'
+    end
   end
 
   def edit
@@ -36,7 +40,8 @@ class ReviewsController < ApplicationController
   end
 
   private
-  def params
+
+  def review_params
     params.require(:review).permit(:rent_id, :comment, :rating)
   end
 end

@@ -19,6 +19,7 @@ class SkillsController < ApplicationController
       redirect_to :action => 'index'
     else
       render :action => 'new'
+    end
   end
 
   def edit
@@ -40,6 +41,6 @@ class SkillsController < ApplicationController
   def params
     params.require(:skill).permit(:skill)
   end
-end
+  end
 
 end

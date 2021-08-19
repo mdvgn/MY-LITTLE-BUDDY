@@ -1,5 +1,5 @@
  .cards-dwarf-container {
-   margin-top: 100px;
+   margin-top: 50px;
    padding: 0 10%;
   }
 
@@ -22,9 +22,10 @@
   }
 
   .card-trip {
+    position: relative;
   justify-content: space-between;
-  margin: 10px 10px;
-  width: 300px;
+  margin: 15px 10px;
+  width: 350px;
   height: 400px;
   overflow: hidden;
   background: white;
@@ -55,9 +56,13 @@
   }
 }
 
+.card-trip-pricing {
+  width: 100px;
+  text-align: right;
+}
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
   color: black;
@@ -87,7 +92,15 @@
 }
 
 .hire-btn {
-  position: relative;
+  position: absolute;
   left: 30%;
-  margin-top: 30px;
+  bottom: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.349);
+}
+
+.cards-stars {
+  position: absolute;
+  top: 0;
+  padding: 15px 20px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.445);
 }

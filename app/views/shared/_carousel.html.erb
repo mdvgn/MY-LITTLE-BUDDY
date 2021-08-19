@@ -11,83 +11,40 @@
             <input type="radio" name="slides" id="slide-6">
             <input type="radio" name="slides" id="slide-7">
             <ul class="carousel__slides">
+            <% dwarves = Dwarf.all  %>
+            <% dwarves.each do |dwarf| %>
                 <li class="carousel__slide">
                     <figure>
                         <div>
-                            <img class="bigimg" src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197013/igwyg5sj0og37480nwe3.jpg" alt="">
+                          <%= cl_image_tag dwarf.photos[0].key, class: "bigimg"%>
                         </div>
                         <figcaption>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            <span class="credit">Photo: Tim Marshall</span>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li class="carousel__slide">
-                    <figure>
                         <div>
-                            <img class="bigimg" src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197127/vf6ejza9lebzm13ywxmz.jpg" alt="">
+                          <%= link_to dwarf.nickname, dwarf_path(dwarf.id) %>
+                          <hr>
+                          <%= dwarf.description %>
+                          <div class="reviews_container">
+                            <% rents = Rent.where(dwarf_id: dwarf.id) %>
+                            <% rents.each do |rent| %>
+                              <% reviews = Review.where(rent_id: rent.id) %>
+                              <% review = reviews.last %>
+                              <% stars = review[:rating].to_i  %>
+                                <% stars.times do %>
+                                  <i class="fas fa-star"></i>
+                                <% end %>
+                              <% end %>
+                          </div>
+                          <% if current_user && dwarf.user_id != current_user.id  %>
+                            <div class="hire-btn">
+                              <%= link_to 'Hire me', new_dwarf_rent_path(dwarf.id), class: "btn btn-primary"  %>
+                            </div>
+                          <% end  %>
                         </div>
-                        <figcaption>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            <span class="credit">Photo: Christian Joudrey</span>
                         </figcaption>
                     </figure>
                 </li>
-                <li class="carousel__slide">
-                    <figure>
-                        <div>
-                            <img class="bigimg" src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197098/myvcunz1ixhdtl3q3pi8.jpg" alt="">
-                        </div>
-                        <figcaption>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            <span class="credit">Photo: Steve Carter</span>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li class="carousel__slide">
-                    <figure>
-                        <div>
-                            <img class="bigimg" src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197115/kpaie6r4zq7iost9wxpd.jpg" alt="">
-                        </div>
-                        <figcaption>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            <span class="credit">Photo: Aleksandra Boguslawska</span>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li class="carousel__slide">
-                    <figure>
-                        <div>
-                            <img class="bigimg" src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197142/yi0kant4zxaqco2lsr1a.gif" alt="">
-                        </div>
-                        <figcaption>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            <span class="credit">Photo: Rosan Harmens</span>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li class="carousel__slide">
-                    <figure>
-                        <div>
-                            <img class="bigimg" src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197080/mjgv7ogws1tzolaurzld.jpg" alt="">
-                        </div>
-                        <figcaption>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            <span class="credit">Photo: Annie Spratt</span>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li class="carousel__slide">
-                    <figure>
-                        <div>
-                            <img class="bigimg" src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197062/hzfya7bdu72cn9neydwe.jpg" alt="">
-                        </div>
-                        <figcaption>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            <span class="credit">Photo: Annie Spratt</span>
-                        </figcaption>
-                    </figure>
-                </li>
+            <% end %>
+
             </ul>
             <ul class="carousel__thumbnails">
                 <li>

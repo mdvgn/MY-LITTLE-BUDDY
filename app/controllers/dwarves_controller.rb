@@ -6,6 +6,11 @@ class DwarvesController < ApplicationController
       lat: flat.latitude,
       lng: flat.longitude
     }
+#     if params[:search].present?
+#       @dwarves = Dwarf.joins(:skills).where(skills: { skill: params[:search]})
+#     else
+#       @dwarves = Dwarf.all
+
     end
   end
 

@@ -21,7 +21,7 @@ pass = Dwarf.create!(
 pass.photos.attach(io: File.open('app/assets/images/home/home/top_7/passe-partout.jpg'), filename: 'passpartout.jpg', content_type:'image/jpg')
 
 mimi = Dwarf.create!(
-  nickname: "mimimaty",
+  nickname: "Mimilf Mathy",
   size: 80,
   gender: "female",
   description: "naine gardienne",
@@ -92,6 +92,8 @@ User.create!(
   is_dwarf: false,
   age: 39,
 )
+
+puts "#{Dwarf.count} midgets created"
 
 skills = %w(Lap\ dancer Stuntman Canonman Flying\ Midget Midget\ Tossing)
 

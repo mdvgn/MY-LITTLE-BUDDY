@@ -2,10 +2,10 @@
   position: relative;
 
   &:before {
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: ($height / $width) * 100%;
+    // display: block;
+    // content: "";
+    // width: 100%;
+    // padding-top: ($height / $width) * 100%;
   }
 
   > .bigimg {
@@ -24,7 +24,7 @@
         object-fit: cover;
   }
 }
- 
+
 // Styling
 
 
@@ -34,7 +34,7 @@ section {
         font-size: 56px;
         padding: 50px 50px 50px 180px;
     }
-    background-color: black;
+    background-color: rgb(13,17,23);
     padding: 50px 0;
     color: white;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -47,7 +47,6 @@ section {
     max-width: 1044px;
     margin: 0 auto;
     padding: 0 20px;
-    background-color: black;
 }
 
 .carousel {
@@ -93,6 +92,7 @@ section {
     white-space: nowrap;
     box-sizing: border-box;
     display: flex;
+    height: 600px;
 }
 
 .carousel__slide {
@@ -183,3 +183,12 @@ section {
         height: 100px;
         object-fit: cover;
     }
+
+figcaption a {
+  color: tomato;
+  transition: color 0.5s ease;
+  &:hover {
+    color: HSLA(345, 100%, 60%, 1.00);
+    text-decoration: none;
+  }
+}

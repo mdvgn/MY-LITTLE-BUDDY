@@ -59,11 +59,15 @@
   border-bottom-right-radius: 10px;
   color: white;
   background-color: tomato;
-  transition: background-color 0.8s ease;
+  transition: background-color 0.5s ease;
 }
 
 .search-button:hover {
   background-color: HSLA(345, 100%, 60%, 1.00);
   text-decoration: none;
   color: white;
+}
+
+.dwarves-index-search-bar {
+ margin-top: 80px;
 }
