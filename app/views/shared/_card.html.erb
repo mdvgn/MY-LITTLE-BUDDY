@@ -20,12 +20,14 @@
         <% reviews = Review.where(rent_id: rent.id) %>
         <% review = reviews.last %>
         <% stars = review[:rating].to_i  %>
+        <div class="cards-stars">
           <% stars.times do %>
             <i class="fas fa-star"></i>
           <% end %>
+        </div>
         <% end %>
     </div>
-  <% if dwarf.user_id != current_user.id  %>
+  <% if current_user && dwarf.user_id != current_user.id  %>
     <div class="hire-btn">
       <%= link_to 'Hire me', new_dwarf_rent_path(dwarf.id), class: "btn btn-primary"  %>
     </div>

@@ -22,6 +22,7 @@
   }
 
   .card-trip {
+    position: relative;
   justify-content: space-between;
   margin: 15px 10px;
   width: 350px;
@@ -91,7 +92,15 @@
 }
 
 .hire-btn {
-  position: relative;
+  position: absolute;
   left: 30%;
-  margin-top: 30px;
+  bottom: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.349);
+}
+
+.cards-stars {
+  position: absolute;
+  top: 0;
+  padding: 15px 20px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.445);
 }
