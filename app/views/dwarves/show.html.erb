@@ -1,16 +1,37 @@
 <div class="show-container">
-    <h1><%= @dwarf.nickname %></h1>
+    <h1 class="text-center"><%= @dwarf.nickname %></h1>
   <div class="show-content">
     <div class="show-img">
-      <% @dwarf.photos.each do |photo| %>
-        <%= cl_image_tag photo.key %>
-      <% end %>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <% i = 0 %>
+      <% n = @dwarf.photos.count %>
+      <%= cl_image_tag @dwarf.photos[0].key, class:"d-block" %>
+    </div>
+    <% n.times do %>
+     <div class="carousel-item">
+       <%= cl_image_tag @dwarf.photos[i].key, class:"d-block" %>
+       <% i += 1 %>
+      </div>
+    <% end %>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
     </div>
     <div class="show-infos">
-      <h2><%= @dwarf.size %> cm</h2>
-      <h3 id = "gender"><%= @dwarf.gender %></h3>
-      <h4>"<%= @dwarf.description %>"</h4>
-      <h3><i class="fas fa-map-marker-alt"></i> <%= @dwarf.location %></h3>
+      <h2 class="text-center">Ma taille</h2>
+      <h4 class="text-center"><%= @dwarf.size %> cm</h4>
+      <br>
+      <h2 class="text-center">Ma devise</h2>
+      <h4 class="text-center">"<%= @dwarf.description.capitalize %>"</h4>
       <hr>
       <div class="show-skills-container">
         <%  @dwarf.dwarf_skills.each do |skill| %>
@@ -27,7 +48,6 @@
         <div class="reviews_container">
               <div class="show-comment">
                 <h4>"<%= review[:comment] %>"</h4>
-
               </div>
               <% stars = review[:rating].to_i  %>
               <% stars.times do %>
@@ -38,8 +58,9 @@
         </div>
           <% end %>
         <% end %>
+        <br>
           <% if current_user && @dwarf.user_id != current_user.id  %>
-        <div class="show-hire-btn">
+        <div class="text-center">
           <%= link_to 'Hire me', new_dwarf_rent_path(@dwarf.id), class: "btn btn-primary", id: "show-hire-btn"  %>
         </div>
       <% end  %>
