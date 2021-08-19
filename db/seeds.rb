@@ -2,12 +2,17 @@ User.destroy_all if Rails.env.development?
 Skill.destroy_all if Rails.env.development?
 Dwarf.destroy_all if Rails.env.development?
 
+skills = %w(Lap\ dance Cascadeur Petit-Homme-Canon Lancé\ de\ nain Mobilier Bowling Combat\ de\ nain Nain\ aquatique )
+
+skills.each do |skill|
+  Skill.create!(skill: skill)
+end
 
 pass = Dwarf.create!(
   nickname: "Pass2Par",
   size: 130,
   gender: "male",
-  description: "je passe ou vous voulez, quand vous-voulez, nain'porte ou",
+  description: "Je passe ou vous voulez, quand vous-voulez, nain'porte ou",
   price_per_hour: 250,
   location: "2 rue boyer, Nice",
   user: User.create!(
@@ -24,16 +29,18 @@ mimi = Dwarf.create!(
   nickname: "Mimilf Mathy",
   size: 80,
   gender: "female",
-  description: "naine gardienne",
+  description: "La naine gardienne",
   price_per_hour: 20,
-  location: " 4 rue du paradis, Nice",
+  location: " 4 boulevard Carabacel, Nice",
+  # skills: Skill.create!(
+  #   skills: "Lap dance"),
   user: User.create!(
     email: "mimimaty@gmail.com",
     password: "azerty",
     first_name: "Mimi",
     last_name: "Maty",
     is_dwarf: true,
-    age: 54)
+    age: 54),
 )
 mimi.photos.attach(io: File.open('app/assets/images/home/home/top_7/mimi-mathy.jpg'), filename: 'mimi.jpg', content_type:'image/jpg')
 
@@ -75,6 +82,127 @@ captnain = Dwarf.create!(
 captnain.photos.attach(io: File.open('app/assets/images/home/home/top_7/captainameridwarf.jpg'), filename: 'captnain.jpg', content_type:'image/jpg')
 
 
+frodon = Dwarf.create!(
+  nickname: "Frodon",
+  size: 134,
+  gender: "male",
+  description: "J'ai un petit anneau",
+  price_per_hour: 420,
+  location: " 4 rue droite, Nice",
+  user: User.create!(
+    email: "frodon@gmail.com",
+    password: "azerty",
+    first_name: "frodon",
+    last_name: "sacacquettes",
+    is_dwarf: true,
+    age: 34)
+)
+frodon.photos.attach(io: File.open('app/assets/images/seeds/frodon.jpg'), filename: 'frodon.jpg', content_type:'image/jpg')
+
+dejardin = Dwarf.create!(
+  nickname: "Dejardin",
+  size: 134,
+  gender: "male",
+  description: "J'aime être nu, m'enduire de vaseline, et me rouler par terre en prétendant que je suis une limace",
+  price_per_hour: 40,
+  location: " 12 avenue Thiers, Nice",
+  user: User.create!(
+    email: "naindejardin@gmail.com",
+    password: "azerty",
+    first_name: "Jean",
+    last_name: "Dejardin",
+    is_dwarf: true,
+    age: 44)
+)
+dejardin.photos.attach(io: File.open('app/assets/images/seeds/dejardin.jpg'), filename: 'dejardin.jpg', content_type:'image/jpg')
+
+yoda = Dwarf.create!(
+  nickname: "Yoda",
+  size: 124,
+  gender: "male",
+  description: "Me louer, tu peux",
+  price_per_hour: 40,
+  location: " 15 avenue Jean Medecin, Nice",
+  user: User.create!(
+    email: "yoda@gmail.com",
+    password: "azerty",
+    first_name: "Maitre",
+    last_name: "Yoda",
+    is_dwarf: true,
+    age: 74)
+)
+yoda.photos.attach(io: File.open('app/assets/images/seeds/yoda1.jpg'), filename: 'yoda1.jpg', content_type:'image/jpg')
+
+bowling = Dwarf.create!(
+  nickname: "Boule",
+  size: 124,
+  gender: "male",
+  description: "Une piste, des quilles, trois doigts et je suis à toi",
+  price_per_hour: 40,
+  location: " 2 Promenade des Anglais, Nice",
+  user: User.create!(
+    email: "boule@gmail.com",
+    password: "azerty",
+    first_name: "Boule",
+    last_name: "Aquilles",
+    is_dwarf: true,
+    age: 34)
+)
+bowling.photos.attach(io: File.open('app/assets/images/seeds/boule.jpg'), filename: 'boule.jpg', content_type:'image/jpg')
+
+
+dildo = Dwarf.create!(
+  nickname: "Dildo",
+  size: 134,
+  gender: "male",
+  description: "Devine ce que je cache dans ma poche",
+  price_per_hour: 666,
+  location: " 4 place de la république, Paris",
+  user: User.create!(
+    email: "dildolehobbit@gmail.com",
+    password: "azerty",
+    first_name: "Dildo",
+    last_name: "Le Hobbit",
+    is_dwarf: true,
+    age: 34)
+)
+dildo.photos.attach(io: File.open('app/assets/images/seeds/bilbo1.jpg'), filename: 'bilbo1.jpg', content_type:'image/jpg')
+
+nainesteaseuse = Dwarf.create!(
+  nickname: "Pamela",
+  size: 134,
+  gender: "female",
+  description: "Un nain vaut mieux que deux tu l'auras.",
+  price_per_hour: 49,
+  location: " 6 rue de russie, Nice",
+  user: User.create!(
+    email: "pamela@gmail.com",
+    password: "azerty",
+    first_name: "Pamela",
+    last_name: "Nainesteaseuse",
+    is_dwarf: true,
+    age: 34)
+)
+nainesteaseuse.photos.attach(io: File.open('app/assets/images/seeds/nainesteaseuse.jpg'), filename: 'nainesteaseuse.jpg', content_type:'image/jpg')
+
+naingeur = Dwarf.create!(
+  nickname: "Naingeur",
+  size: 100,
+  gender: "male",
+  description: "Je fais 1 mètre de haut et j'aime nager, je suis un Maître Naingeur.",
+  price_per_hour: 49,
+  location: " 2 rue pertinax, Nice",
+  user: User.create!(
+    email: "naingeur@gmail.com",
+    password: "azerty",
+    first_name: "Nemo",
+    last_name: "Le nainquatique",
+    is_dwarf: true,
+    age: 34)
+)
+naingeur.photos.attach(io: File.open('app/assets/images/seeds/nainquatique1.jpg'), filename: 'nainquatique1.jpg', content_type:'image/jpg')
+
+
 User.create!(
   email: "chuck@gmail.com",
   password: "azerty",
@@ -94,9 +222,3 @@ User.create!(
 )
 
 puts "#{Dwarf.count} midgets created"
-
-skills = %w(Lap\ dance Cascadeur Nain-canon Lancé\ de\ nain Mobilier)
-
-skills.each do |skill|
-  Skill.create!(skill: skill)
-end
