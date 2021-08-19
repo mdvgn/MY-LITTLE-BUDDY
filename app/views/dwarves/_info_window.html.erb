@@ -1,2 +1,3 @@
-<h2><%= dwarf.nickname %></h2>
+<%= link_to dwarf.nickname, dwarf_path(dwarf.id) %>
 <p><%= dwarf.location %></p>
+<%= cl_image_tag dwarf.photos.first.key, :width=>100, :height=>100, :gravity=>"faces", :crop=>"thumb", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
