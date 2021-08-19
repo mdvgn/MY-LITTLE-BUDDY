@@ -2,26 +2,24 @@ class DwarvesController < ApplicationController
   def index
     search = params[:search]
     if search.present?
-      if search[:skill].empty? && search[:location]
+      if search[:skill].empty? && !search[:location].empty?
         @dwarves = Dwarf.global_search(search[:location])
-      elsif search[:skill] && search[:location].empty?
+        create_markers(@dwarves)
+      elsif !search[:skill].empty? && search[:location].empty?
         @dwarves = Dwarf.global_search(search[:skill])
-      else
+        create_markers(@dwarves)
+      elsif !search[:skill].empty? && !search[:location].empty?
         dwarf_skill = Dwarf.global_search(search[:skill])
         dwarf_location = Dwarf.global_search(search[:location])
         @dwarves = (dwarf_skill & dwarf_location)
+        create_markers(@dwarves)
+      elsif search[:skill].empty? && search[:location].empty?
+        @dwarves = Dwarf.all
+        create_markers(@dwarves)
       end
-      # @dwarves = Dwarf.joins(:skills).where(skills: { skill: params[:search]})
-    else
-      @dwarves = Dwarf.all
-      @markers = @dwarves.geocoded.map do |dwarf|
-        {
-          lat: dwarf.latitude,
-          lng: dwarf.longitude,
-          info_window: render_to_string(partial: "info_window", locals: { dwarf: dwarf }),
-          image_url: helpers.asset_url('https://o.remove.bg/downloads/9f98078a-4891-4891-8fc6-8bfebc837b9e/cartoon-dwarf-mascot-logo-vector-illustration-187235936-removebg-preview.png')
-        }
-        end
+      else
+        @dwarves = Dwarf.all
+        create_markers(@dwarves)
     end
   end
 
@@ -60,6 +58,17 @@ class DwarvesController < ApplicationController
   end
 
   private
+
+  def create_markers(dwarves)
+    @markers = dwarves.geocoded.map do |dwarf|
+      {
+        lat: dwarf.latitude,
+        lng: dwarf.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { dwarf: dwarf }),
+        image_url: helpers.asset_url('https://o.remove.bg/downloads/9f98078a-4891-4891-8fc6-8bfebc837b9e/cartoon-dwarf-mascot-logo-vector-illustration-187235936-removebg-preview.png')
+      }
+    end
+  end
 
   def dwarf_params
     params.require(:dwarf).permit(:nickname, :size, :gender, :description, :price_per_hour, :location, photos: [])
