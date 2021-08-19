@@ -14,7 +14,7 @@ class RentsController < ApplicationController
     @rent[:dwarf_id] = @dwarf.id
     @rent[:user_id] = current_user.id
     if @rent.save
-      redirect_to user_rents_path(current_user.id)
+      redirect_to rents_path(current_user.id)
     else render:new
     end
   end
