@@ -23,6 +23,7 @@
                           <%= link_to dwarf.nickname, dwarf_path(dwarf.id) %>
                           <hr>
                           <%= dwarf.description %>
+                            <hr>
                           <div class="reviews_container">
                             <% rents = Rent.where(dwarf_id: dwarf.id) %>
                               <% rents.each do |rent| %>
@@ -37,6 +38,7 @@
                               <% end %>
                           </div>
                           <% if current_user && dwarf.user_id != current_user.id  %>
+                          <hr>
                             <div class="hire-btn">
                               <%= link_to 'Hire me', new_dwarf_rent_path(dwarf.id), class: "btn btn-primary"  %>
                             </div>
@@ -50,25 +52,25 @@
             </ul>
             <ul class="carousel__thumbnails">
                 <li>
-                    <label for="slide-1"><img class="imgthumb" img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197013/igwyg5sj0og37480nwe3.jpg" alt=""></label>
+                    <label for="slide-1"><div class="top-carousel">n°1</div></label>
                 </li>
                 <li>
-                    <label for="slide-2"><img class="imgthumb" img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197127/vf6ejza9lebzm13ywxmz.jpg" alt=""></label>
+                    <label for="slide-2"><div class="top-carousel">n°2</div></label>
                 </li>
                 <li>
-                    <label for="slide-3"><img class="imgthumb" img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197098/myvcunz1ixhdtl3q3pi8.jpg" alt=""></label>
+                    <label for="slide-3"><div class="top-carousel">n°3</div></label>
                 </li>
                 <li>
-                    <label for="slide-4"><img class="imgthumb" img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197115/kpaie6r4zq7iost9wxpd.jpg" alt=""></label>
+                    <label for="slide-4"><div class="top-carousel">n°4</div></label>
                 </li>
                 <li>
-                    <label for="slide-5"><img class="imgthumb" img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197142/yi0kant4zxaqco2lsr1a.gif" alt=""></label>
+                    <label for="slide-5"><div class="top-carousel">n°5</div></label>
                 </li>
                 <li>
-                    <label for="slide-6"><img class="imgthumb" img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197080/mjgv7ogws1tzolaurzld.jpg" alt=""></label>
+                    <label for="slide-6"><div class="top-carousel">n°6</div></label>
                 </li>
                 <li>
-                    <label for="slide-7"><img class="imgthumb" img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629197062/hzfya7bdu72cn9neydwe.jpg" alt=""></label>
+                    <label for="slide-7"><div class="top-carousel">n°7</div></label>
                 </li>
             </ul>
         </div>
