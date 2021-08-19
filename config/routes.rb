@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/edit'
-  get 'dwarf_skills/new'
-  get 'dwarf_skills/create'
-  get 'dwarf_skills/edit'
-  get 'dwarf_skills/update'
-  get 'dwarf_skills/destroy'
-  devise_for :users
+  resources :dwarf_skills
+  devise_for :users, controllers: {registrations: "users/registrations"}
   root to: 'pages#home'
   resources :dwarves do
     resources :rents, only: [:new, :create]
@@ -16,7 +11,7 @@ Rails.application.routes.draw do
   resources :dwarves do
     resources :dwarf_skills
   end
-  resources :users do
-    resources :rents, only: [:index, :show]
-  end
+
+  resources :rents, only: [:index, :show]
+
 end
