@@ -17,9 +17,9 @@ class DwarvesController < ApplicationController
         @dwarves = Dwarf.all
         create_markers(@dwarves)
       end
-      else
-        @dwarves = Dwarf.all
-        create_markers(@dwarves)
+    else
+      @dwarves = Dwarf.all
+      create_markers(@dwarves)
     end
   end
 
