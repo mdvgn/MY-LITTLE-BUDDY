@@ -2,3 +2,28 @@
   margin: 5% 30%;
   color: white;
 }
+
+#new_rent {
+  background-color: rgb(240, 240, 240);
+  padding: 10px 20px 20px 20px;
+  border-radius: 20px;
+}
+
+#new_rent h2 {
+  color: black;
+  margin-top: 15px;
+}
+
+#rent-price {
+  color: black;
+  background-color: rgb(240, 240, 240);
+  padding: 10px 0;
+  border-radius: 20px;
+  h1 {
+    margin: 0;
+  }
+}
+
+.rent-card {
+  margin-top: 50px;
+}

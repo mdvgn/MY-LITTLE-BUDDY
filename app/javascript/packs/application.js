@@ -28,7 +28,7 @@ import { showNavbar } from "../components/navbar"
 import { moveSearchbar } from "../components/searchbar"
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox'
-
+import { priceCalculator } from "../components/calcul-price"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -38,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   moveSearchbar();
   showNavbar();
+  priceCalculator();
 });

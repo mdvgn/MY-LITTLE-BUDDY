@@ -5,8 +5,8 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <% i = 0 %>
-      <% n = @dwarf.photos.count %>
+      <% i = 1 %>
+      <% n = @dwarf.photos.count - 1 %>
       <%= cl_image_tag @dwarf.photos[0].key, class:"d-block" %>
     </div>
     <% n.times do %>
@@ -43,13 +43,11 @@
         <i class="far fa-comment"></i>
         <% rents = Rent.where(dwarf_id: @dwarf.id) %>
           <% rents.each do |rent| %>
-            <% reviews = Review.where(rent_id: rent.id) %>
-            <% reviews.each do |review| %>
         <div class="reviews_container">
               <div class="show-comment">
-                <h4>"<%= review[:comment] %>"</h4>
+                <h4>"<%= rent.review %>"</h4>
               </div>
-              <% stars = review[:rating].to_i  %>
+              <% stars = rent.rating.to_i  %>
               <% stars.times do %>
               <div class="show-stars">
                 <i class="fas fa-star"></i>
@@ -57,14 +55,13 @@
             <% end %>
         </div>
           <% end %>
-        <% end %>
         <br>
           <% if current_user && @dwarf.user_id != current_user.id  %>
         <div class="text-center">
-          <%= link_to 'Hire me', new_dwarf_rent_path(@dwarf.id), class: "btn btn-primary", id: "show-hire-btn"  %>
+          <%= link_to 'Loue-moi!', new_dwarf_rent_path(@dwarf.id), class: "btn btn-primary", id: "show-hire-btn"  %>
         </div>
       <% end  %>
     </div>
   </div>
- <%= link_to 'Back to dwarf collection', dwarves_path, class: "btn btn-warning", id: "show-back-btn"  %>
+ <%= link_to 'Retour à la collection de nain', dwarves_path, class: "btn btn-warning", id: "show-back-btn"  %>
 </div>

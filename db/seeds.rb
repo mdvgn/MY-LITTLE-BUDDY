@@ -2,7 +2,7 @@ User.destroy_all if Rails.env.development?
 Skill.destroy_all if Rails.env.development?
 Dwarf.destroy_all if Rails.env.development?
 
-skills = %w(Lap\ dance Cascadeur Petit-Homme-Canon Lancé\ de\ nain Mobilier Bowling Combat\ de\ nain Nain\ aquatique )
+skills = %w(Lap\ dance Cascadeur Petit\ Projectile Lancé\ de\ nain Mobilier Esnabot Bowling Combat\ de\ nain Nain\ aquatique Catcheur Porte\ gobelet Mètre\ étalon Porte-clés)
 
 skills.each do |skill|
   Skill.create!(skill: skill)
@@ -88,7 +88,7 @@ frodon = Dwarf.create!(
   gender: "male",
   description: "J'ai un petit anneau",
   price_per_hour: 420,
-  location: " 4 rue droite, Nice",
+  location: " 4 rue des Fabriques d'en Nabot, 66000 Perpignan",
   user: User.create!(
     email: "frodon@gmail.com",
     password: "azerty",
@@ -136,10 +136,10 @@ yoda.photos.attach(io: File.open('app/assets/images/seeds/yoda1.jpg'), filename:
 bowling = Dwarf.create!(
   nickname: "Boule",
   size: 124,
-  gender: "male",
+  gender: "shemale",
   description: "Une piste, des quilles, trois doigts et je suis à toi",
   price_per_hour: 40,
-  location: " 2 Promenade des Anglais, Nice",
+  location: " 3 rue montparnasse, paris",
   user: User.create!(
     email: "boule@gmail.com",
     password: "azerty",
@@ -157,7 +157,7 @@ dildo = Dwarf.create!(
   gender: "male",
   description: "Devine ce que je cache dans ma poche",
   price_per_hour: 666,
-  location: " 4 place de la république, Paris",
+  location: " 10 Rue de la Republique, Lyon",
   user: User.create!(
     email: "dildolehobbit@gmail.com",
     password: "azerty",
@@ -219,6 +219,333 @@ User.create!(
   last_name: "Diesel",
   is_dwarf: false,
   age: 39,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 1,
+    skill_id: 4,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 1,
+    skill_id: 6,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 1,
+    skill_id: 13,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 2,
+    skill_id: 1,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 2,
+    skill_id: 11,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 2,
+    skill_id: 5,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 3,
+    skill_id: 10,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 3,
+    skill_id: 12,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 4,
+    skill_id: 10,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 4,
+    skill_id: 3,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 4,
+    skill_id: 2,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 5,
+    skill_id: 6,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 5,
+    skill_id: 11,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 6,
+    skill_id: 12,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 6,
+    skill_id: 1,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 7,
+    skill_id: 2,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 7,
+    skill_id: 6,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 7,
+    skill_id: 8,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 8,
+    skill_id: 7,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 8,
+    skill_id: 2,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 8,
+    skill_id: 3,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 9,
+    skill_id: 5,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 9,
+    skill_id: 11,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 9,
+    skill_id: 13,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 10,
+    skill_id: 1,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 10,
+    skill_id: 6,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 10,
+    skill_id: 9,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 11,
+    skill_id: 9,
+)
+
+DwarfSkill.create!(
+    dwarf_id: 11,
+    skill_id: 12,
+)
+
+Rent.create(
+  dwarf_id: 1,
+  user_id: 2,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "A retrouvé mes clés sous le placard, génial!",
+  rating: 4,
+)
+
+Rent.create(
+  dwarf_id: 1,
+  user_id: 3,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Un moment naincroyable.",
+  rating: 5,
+)
+
+Rent.create!(
+  dwarf_id: 2,
+  user_id: 1,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Mon mini ange a moi.",
+  rating: 3,
+)
+
+Rent.create!(
+  dwarf_id: 2,
+  user_id: 1,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+    review: "Oh mimi...",
+  rating: 4,
+)
+
+Rent.create!(
+  dwarf_id: 3,
+  user_id: 6,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Il mord, fuyez!",
+  rating: 1,
+)
+
+Rent.create!(
+  dwarf_id: 3,
+  user_id: 5,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Tout ce qui est petit est mignon.",
+  rating: 4,
+)
+
+Rent.create!(
+  dwarf_id: 4,
+  user_id: 2,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Fait peur aux chiens, utile!",
+  rating: 3,
+)
+
+
+Rent.create!(
+  dwarf_id: 4,
+  user_id: 1,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Protège des midgethanos!",
+  rating: 4,
+)
+
+Rent.create!(
+  dwarf_id: 5,
+  user_id: 1,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Attention à vos bagues!",
+  rating: 1,
+)
+
+Rent.create!(
+  dwarf_id: 5,
+  user_id: 3,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Guide de rando de poche.",
+  rating: 4,
+)
+
+Rent.create!(
+  dwarf_id: 6,
+  user_id: 2,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Tout petit frisson garantie.",
+  rating: 5,
+)
+
+Rent.create!(
+  dwarf_id: 6,
+  user_id: 5,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Un petit moment de plaisir",
+  rating: 4,
+)
+
+Rent.create!(
+  dwarf_id: 7,
+  user_id: 1,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Pas ouf",
+  rating: 1,
+)
+
+Rent.create!(
+  dwarf_id: 8,
+  user_id: 4,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Bon aerodynamisme!",
+  rating: 5,
+)
+
+Rent.create!(
+  dwarf_id: 8,
+  user_id: 5,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Bonne prise en main.",
+  rating: 4,
+)
+
+Rent.create!(
+  dwarf_id: 10,
+  user_id: 6,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Parfait pour caler une table.",
+  rating: 5,
+)
+
+
+Rent.create!(
+  dwarf_id: 9,
+  user_id: 4,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Porte bien son nom",
+  rating: 5,
+)
+
+Rent.create!(
+  dwarf_id: 10,
+  user_id: 6,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Idéal pour un enterrement",
+  rating: 4,
+)
+
+Rent.create!(
+  dwarf_id: 10,
+  user_id: 3,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Naincomparable",
+  rating: 5,
+)
+
+Rent.create!(
+  dwarf_id: 11,
+  user_id: 8,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Rentre dans une valise, idéal pour les voyages",
+  rating: 4,
 )
 
 puts "#{Dwarf.count} midgets created"

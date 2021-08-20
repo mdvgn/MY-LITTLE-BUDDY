@@ -12,6 +12,6 @@ Rails.application.routes.draw do
     resources :dwarf_skills
   end
 
-  resources :rents, only: [:index, :show]
+  resources :rents, only: [:index, :show, :edit, :update]
 
 end

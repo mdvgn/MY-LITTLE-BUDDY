@@ -17,9 +17,9 @@ class DwarvesController < ApplicationController
         @dwarves = Dwarf.all
         create_markers(@dwarves)
       end
-      else
-        @dwarves = Dwarf.all
-        create_markers(@dwarves)
+    else
+      @dwarves = Dwarf.all
+      create_markers(@dwarves)
     end
   end
 
@@ -66,7 +66,7 @@ class DwarvesController < ApplicationController
           lat: dwarf.latitude,
           lng: dwarf.longitude,
           info_window: render_to_string(partial: "info_window", locals: { dwarf: dwarf }),
-          image_url: helpers.asset_url('https://o.remove.bg/downloads/9f98078a-4891-4891-8fc6-8bfebc837b9e/cartoon-dwarf-mascot-logo-vector-illustration-187235936-removebg-preview.png')
+          image_url: helpers.asset_url('dwarf-logo.png')
         }
       end
     end
