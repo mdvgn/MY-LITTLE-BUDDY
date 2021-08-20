@@ -3,8 +3,14 @@
     <h1>Des nains pour tous les gouts! Et avec tous les gouts!</h1>
   <div class="cards-dwarf-container">
     <div class="cards-dwarf">
+        <% if @dwarves.join == "" %>
+       <div class="no-result">
+        <h2>Aucun nain trouvé avec ces critères <i class="far fa-sad-cry"></i></h2>
+       </div>
+        <% else %>
         <% @dwarves.each do |dwarf| %>
           <%= render 'shared/card', dwarf: dwarf%>
+        <% end %>
         <% end %>
     </div>
     <div id="map"
