@@ -23,32 +23,3 @@ body {
   display: table;
   width: 100%;
 }
-  .footer {
-    background:#ffffff;
-    display: table-row;
-    text-align: center;
-    justify-content: space-between;
-    height: 80px;
-    padding: 20px 50px;
-    color: rgba(0,0,0,0.3);
-    padding-top: 50 px;
-  }
-  .footer-links {
-    display: flex;
-    justify-content: center ;
-
-  }
-  .footer-links a {
-    color: black;
-    opacity: 0.15;
-    text-decoration: none;
-    font-size: 24px;
-    padding: 20px 20px 0px 20px;
-  }
-  .footer-links a:hover {
-    opacity: 1;
-  }
-  .footer-copyright {
-    color: tomato;
-    padding-bottom: 10px;
-  }
