@@ -366,293 +366,186 @@ DwarfSkill.create!(
     skill_id: 12,
 )
 
-# Rent.create(
-#   dwarf_id: 1,
-#   user_id: 2,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create(
+  dwarf_id: 1,
+  user_id: 2,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "A retrouvé mes clés sous le placard, génial!",
+  rating: 4,
+)
 
-# Rent.create(
-#   dwarf_id: 1,
-#   user_id: 3,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create(
+  dwarf_id: 1,
+  user_id: 3,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Un moment naincroyable.",
+  rating: 5,
+)
 
-# Rent.create!(
-#   dwarf_id: 2,
-#   user_id: 1,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 2,
+  user_id: 1,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Mon mini ange a moi.",
+  rating: 3,
+)
 
-# Rent.create!(
-#   dwarf_id: 2,
-#   user_id: 1,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 2,
+  user_id: 1,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+    review: "Oh mimi...",
+  rating: 4,
+)
 
-# Rent.create!(
-#   dwarf_id: 3,
-#   user_id: 4,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 3,
+  user_id: 6,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Il mord, fuyez!",
+  rating: 1,
+)
 
-# Rent.create!(
-#   dwarf_id: 4,
-#   user_id: 6,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 3,
+  user_id: 5,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Tout ce qui est petit est mignon.",
+  rating: 4,
+)
 
-# Rent.create!(
-#   dwarf_id: 4,
-#   user_id: 5,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
-
-# Rent.create!(
-#   dwarf_id: 5,
-#   user_id: 2,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 4,
+  user_id: 2,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Fait peur aux chiens, utile!",
+  rating: 3,
+)
 
 
-# Rent.create!(
-#   dwarf_id: 5,
-#   user_id: 1,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 4,
+  user_id: 1,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Protège des midgethanos!",
+  rating: 4,
+)
 
-# Rent.create!(
-#   dwarf_id: 6,
-#   user_id: 1,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 5,
+  user_id: 1,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Attention à vos bagues!",
+  rating: 1,
+)
 
-# Rent.create!(
-#   dwarf_id: 6,
-#   user_id: 3,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 5,
+  user_id: 3,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Guide de rando de poche.",
+  rating: 4,
+)
 
-# Rent.create!(
-#   dwarf_id: 7,
-#   user_id: 2,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 6,
+  user_id: 2,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Tout petit frisson garantie.",
+  rating: 5,
+)
 
-# Rent.create!(
-#   dwarf_id: 7,
-#   user_id: 5,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 6,
+  user_id: 5,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Un petit moment de plaisir",
+  rating: 4,
+)
 
-# Rent.create!(
-#   dwarf_id: 8,
-#   user_id: 1,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 7,
+  user_id: 1,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Pas ouf",
+  rating: 1,
+)
 
-# Rent.create!(
-#   dwarf_id: 8,
-#   user_id: 4,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 8,
+  user_id: 4,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Bon aerodynamisme!",
+  rating: 5,
+)
 
-# Rent.create!(
-#   dwarf_id: 9,
-#   user_id: 5,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 8,
+  user_id: 5,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Bonne prise en main.",
+  rating: 4,
+)
 
-# Rent.create!(
-#   dwarf_id: 9,
-#   user_id: 6,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 10,
+  user_id: 6,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Parfait pour caler une table.",
+  rating: 5,
+)
 
-# Rent.create!(
-#   dwarf_id: 10,
-#   user_id: 6,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
 
-# Rent.create!(
-#   dwarf_id: 10,
-#   user_id: 4,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 9,
+  user_id: 4,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Porte bien son nom",
+  rating: 5,
+)
 
-# Rent.create!(
-#   dwarf_id: 11,
-#   user_id: 6,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 10,
+  user_id: 6,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Idéal pour un enterrement",
+  rating: 4,
+)
 
-# Rent.create!(
-#   dwarf_id: 11,
-#   user_id: 3,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
+Rent.create!(
+  dwarf_id: 10,
+  user_id: 3,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Naincomparable",
+  rating: 5,
+)
 
-# Rent.create!(
-#   dwarf_id: 11,
-#   user_id: 7,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
-
-# Rent.create!(
-#   dwarf_id: 11,
-#   user_id: 8,
-#   start_date: "2021-08-19T23:32",
-#   end_date: "2021-08-20T23:32",
-# )
-
-# Review.create!(
-#   comment: "Un moment naincroyable.",
-#   rating: 4,
-#   rent_id: 1
-# )
-
-# Review.create!(
-#   comment: "A retrouvé mes clés sous le placard, génial!",
-#   rating: 3,
-#   rent_id: 2,
-# )
-
-# Review.create!(
-#   comment: "Mon mini ange a moi.",
-#   rating: 3,
-#   rent_id: 3,
-# )
-
-# Review.create!(
-#   comment: "Oh mimi...",
-#   rating: 5,
-#   rent_id: 4,
-# )
-
-# Review.create!(
-#   comment: "Il mord, fuyez!",
-#   rating: 1,
-#   rent_id: 5,
-# )
-
-# Review.create!(
-#   comment: "Tout ce qui est petit est mignon.",
-#   rating: 4,
-#   rent_id: 6,
-# )
-
-# Review.create!(
-#   comment: "Fait peur aux chiens, utile!",
-#   rating: 3,
-#   rent_id: 10,
-# )
-
-# Review.create!(
-#   comment: "Protège des midgethanos!",
-#   rating: 4,
-#   rent_id: 7,
-# )
-
-# Review.create!(
-#   comment: "Attention à vos bagues!",
-#   rating: 1,
-#   rent_id: 9,
-# )
-
-# Review.create!(
-#   comment: "Guide de rando de poche.",
-#   rating: 4,
-#   rent_id: 8,
-# )
-
-# Review.create!(
-#   comment: "Tout petit frisson garantie.",
-#   rating: 5,
-#   rent_id: 11,
-# )
-
-# Review.create!(
-#   comment: "Un petit moment de plaisir",
-#   rating: 4,
-#   rent_id: 12,
-# )
-
-# Review.create!(
-#   comment: "Pas ouf",
-#   rating: 1,
-#   rent_id: 13,
-# )
-
-# Review.create!(
-#   comment: "Bon aerodynamisme!",
-#   rating: 5,
-#   rent_id: 14,
-# )
-
-# Review.create!(
-#   comment: "Bonne prise en main.",
-#   rating: 4,
-#   rent_id: 15,
-# )
-
-# Review.create!(
-#   comment: "Parfait pour poser son verre en soirée.",
-#   rating: 5,
-#   rent_id: 18,
-# )
-
-# Review.create!(
-#   comment: "La prochaine fois je loue Frodon",
-#   rating: 2,
-#   rent_id: 17,
-# )
-
-# Review.create!(
-#   comment: "Porte bien son nom",
-#   rating: 5,
-#   rent_id: 16,
-# )
-
-# Review.create!(
-#   comment: "Idéal pour un enterrement",
-#   rating: 4,
-#   rent_id: 19,
-# )
-
-# Review.create!(
-#   comment: "Naincomparable",
-#   rating: 3,
-#   rent_id: 20,
-# )
-
-# Review.create!(
-#   comment: "Rentre dans une valise, idéal pour les voyages",
-#   rating: 4,
-#   rent_id: 21,
-# )
-
+Rent.create!(
+  dwarf_id: 11,
+  user_id: 8,
+  start_date: "2021-08-19T23:32",
+  end_date: "2021-08-20T23:32",
+  review: "Rentre dans une valise, idéal pour les voyages",
+  rating: 4,
+)
 
 puts "#{Dwarf.count} midgets created"
