@@ -31,14 +31,17 @@
     h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     justify-content: center;
+    text-align: center;
+    margin: auto;
     font-size: 55px;
-    text-shadow: 5px 5px 0px #eb452b, 
-    10px 10px 0px #adef32, 
-    12px 12px 0px #46b559, 
-    15px 15px 0px #034b6d, 
-    18px 18px 0px #052939, 
-    21px 21px 0px #050220, 
-    24px 24px 0px #050220,
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 0px #eb452b, 
+    3px 3px 0px #cc6b2b, 
+    4px 4px 0px #46b559, 
+    5px 5px 0px #034b6d, 
+    6px 6px 0px #052939, 
+    7px 7px 0px #050220, 
+    8px 8px 0px #050220,
     }
   }
 
@@ -57,8 +60,10 @@ section {
     }
     background-color: rgb(13,17,23);
     padding: 50px 0;
-    color: rgb(163, 160, 160);
+    color: rgb(221, 220, 220);
     font-size: 25px;
+    margin-top: 70px;
+    margin-bottom: 70px;
 
 }
 
@@ -144,7 +149,9 @@ section {
 
     figcaption {
         align-self: flex-end;
-        padding: 20px 20px 0 20px;
+        justify-content: center;
+        text-align: center;
+        padding: 20px 20px 0 0px;
         flex: 0 0 auto;
         width: 25%;
         min-width: 150px;
@@ -204,7 +211,8 @@ section {
     }
 
 figcaption a {
-  color: tomato;
+  color: rgb(255, 174, 149);
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
   font-size: 45px;
   transition: color 0.5s ease;
@@ -219,11 +227,14 @@ figcaption a {
   height: 100px;
   width: 100px;
   color: tomato;
+  
+  text-shadow: 3px 3px 0px crimson;
+  text-shadow: 6px 6px 0px rgb(133, 15, 39);
   text-align: center;
   padding-top: 25px;
   padding-left: 25px;
-}
-
-.hire-btn {
-    text-shadow: 0px;
+  font-weight: bolder;
+  font-size: 60px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 2px;
 }
