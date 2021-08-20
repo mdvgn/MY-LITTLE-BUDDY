@@ -28,10 +28,8 @@
                           <div class="reviews_container">
                             <% rents = Rent.where(dwarf_id: dwarf.id) %>
                               <% rents.each do |rent| %>
-                                <% reviews = Review.where(rent_id: rent.id) %>
-                                <% review = reviews.last %>
-                            <% if  review != nil %>
-                                <% stars = review[:rating].to_i  %>
+                            <% if  rent.review != nil %>
+                                <% stars = rent.rating.to_i  %>
                                   <% stars.times do %>
                                     <i class="fas fa-star"></i>
                             <% end %>
@@ -41,7 +39,7 @@
                           <% if current_user && dwarf.user_id != current_user.id  %>
                           <hr>
                             <div class="hire-btn">
-                              <%= link_to 'Hire me', new_dwarf_rent_path(dwarf.id), class: "btn btn-primary"  %>
+                              <%= link_to 'Loue-moi!', new_dwarf_rent_path(dwarf.id), class: "btn btn-primary"  %>
                             </div>
                           <% end  %>
                         </div>

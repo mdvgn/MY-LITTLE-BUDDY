@@ -1,4 +1,3 @@
-
 <div class="dwarves-index-search-bar">
   <%= render 'shared/search_bar' %>
     <h1>Des nains pour tous les gouts! Et avec tous les gouts!</h1>
@@ -14,12 +13,10 @@
         <% end %>
         <% end %>
     </div>
-    <div class="map-container">
-      <div id="map"
-        style="width: 100%; height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+    <div id="map"
+      style="width: 100%; height: 700px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
 </div>

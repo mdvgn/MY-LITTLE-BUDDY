@@ -12,9 +12,14 @@
 @import "components/index";
 @import "pages/index";
 
-
+html {
+  height:100%
+}
 
 body {
   color: rgb(218, 210, 210);
   background: rgb(22,27,34);
+  min-height: 100%;
+  display: table;
+  width: 100%;
 }

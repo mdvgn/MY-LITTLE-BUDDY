@@ -14,9 +14,9 @@
       <%= cl_image_tag dwarf.photos.first.key, :width=>100, :height=>100, :gravity=>"faces", :crop=>"thumb", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </div>
       <div class="rent-button">
-      <% if Review.where(rent_id: rent.id) == [] %>
-      <%= link_to "Add a review", new_rent_review_path(rent.id), class: "btn btn-warning" %>
-      <%= link_to "Cancel",
+      <% if rent.review == nil %>
+      <%= link_to "Ajouter une note", edit_rent_path(rent.id), class: "btn btn-warning" %>
+      <%= link_to "Annuler",
                   rent_path(rent),
                   method: :delete,
                   class: "btn btn-danger",

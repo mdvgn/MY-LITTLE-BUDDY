@@ -1,0 +1,12 @@
+<div class="form-container">
+<h1>Commenter cette prestation</h1>
+<%= simple_form_for [@rent] do |f| %>
+  <%= f.input :review,
+    input_html: { autocomplete: "commentaire" } %>
+  <%= f.input :rating,
+    collection: 0..5,
+    prompt: "Note de 0 à 5",
+    input_html: { autocomplete: "note" } %>
+  <%= f.submit 'Add a review', class: "btn btn-primary" %>
+<% end %>
+</div>
