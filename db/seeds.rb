@@ -1,6 +1,6 @@
-User.destroy_all if Rails.env.development?
-Skill.destroy_all if Rails.env.development?
-Dwarf.destroy_all if Rails.env.development?
+User.destroy_all
+Skill.destroy_all
+Dwarf.destroy_all
 
 skills = %w(Lap\ dance Cascadeur Petit\ Projectile Lancé\ de\ nain Mobilier Esnabot Bowling Combat\ de\ nain Nain\ aquatique Catcheur Porte\ gobelet Mètre\ étalon Porte-clés)
 

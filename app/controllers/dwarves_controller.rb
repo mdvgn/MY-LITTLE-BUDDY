@@ -1,6 +1,7 @@
 class DwarvesController < ApplicationController
   def index
     search = params[:search]
+
     if search.present?
       if search[:skill].empty? && !search[:location].empty?
         @dwarves = Dwarf.global_search(search[:location])
@@ -21,6 +22,7 @@ class DwarvesController < ApplicationController
       @dwarves = Dwarf.all
       create_markers(@dwarves)
     end
+
   end
 
   def new
@@ -60,7 +62,16 @@ class DwarvesController < ApplicationController
   private
 
   def create_markers(dwarves)
-    if dwarves != []
+    if dwarves.class == Array && dwarves != []
+      @markers = dwarves.map do |dwarf|
+        {
+          lat: dwarf.latitude,
+          lng: dwarf.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { dwarf: dwarf }),
+          image_url: helpers.asset_url('dwarf-logo.png')
+        }
+      end
+    elsif  dwarves != []
       @markers = dwarves.geocoded.map do |dwarf|
         {
           lat: dwarf.latitude,
