@@ -60,13 +60,15 @@ class DwarvesController < ApplicationController
   private
 
   def create_markers(dwarves)
-    @markers = dwarves.geocoded.map do |dwarf|
-      {
-        lat: dwarf.latitude,
-        lng: dwarf.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { dwarf: dwarf }),
-        image_url: helpers.asset_url('https://o.remove.bg/downloads/9f98078a-4891-4891-8fc6-8bfebc837b9e/cartoon-dwarf-mascot-logo-vector-illustration-187235936-removebg-preview.png')
-      }
+    if dwarves != []
+      @markers = dwarves.geocoded.map do |dwarf|
+        {
+          lat: dwarf.latitude,
+          lng: dwarf.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { dwarf: dwarf }),
+          image_url: helpers.asset_url('https://o.remove.bg/downloads/9f98078a-4891-4891-8fc6-8bfebc837b9e/cartoon-dwarf-mascot-logo-vector-illustration-187235936-removebg-preview.png')
+        }
+      end
     end
   end
 

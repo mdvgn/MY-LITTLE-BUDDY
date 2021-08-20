@@ -1,18 +1,30 @@
 <div class="form-container">
-<h1>MES LOCATIONS</h1>
-<hr>
-<% @rents.each do |rent| %>
- <h2>Nain à louer: <%= rent.dwarf.nickname %> </h2>
-  <h2>Du <%= rent.end_date %> </h2>
- <h2>Jusqu'au <%= rent.start_date %> </h2>
- <% if Review.where(rent_id: rent.id) == [] %>
- <%= link_to "Add a review", new_rent_review_path(rent.id), class: "btn btn-warning" %>
- <%= link_to "Cancel",
-            rent_path(rent),
-            method: :delete,
-            class: "btn btn-danger",
-            data: { confirm: "Are you sure?" } %>
- <% end %>
- <hr>
-<% end %>
+  <h1>MES LOCATIONS</h1>
+  <div class="rents-container">
+    <hr>
+    <% @rents.each do |rent| %>
+    <div class="rent-container">
+    <div class="rent-text">
+      <h2>Nain : <%= rent.dwarf.nickname %> </h2>
+        <h2>Du <%= rent.end_date %> </h2>
+      <h2>Jusqu'au <%= rent.start_date %> </h2>
+      </div>
+      <div class="rent-avatar">
+      <%  dwarf = Dwarf.find(rent[:dwarf_id]) %>
+      <%= cl_image_tag dwarf.photos.first.key, :width=>100, :height=>100, :gravity=>"faces", :crop=>"thumb", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      </div>
+      <div class="rent-button">
+      <% if Review.where(rent_id: rent.id) == [] %>
+      <%= link_to "Add a review", new_rent_review_path(rent.id), class: "btn btn-warning" %>
+      <%= link_to "Cancel",
+                  rent_path(rent),
+                  method: :delete,
+                  class: "btn btn-danger",
+                  data: { confirm: "Are you sure?" } %>
+      <% end %>
+      </div>
+    </div>
+    <hr>
+    <% end %>
+  </div>
 </div>
