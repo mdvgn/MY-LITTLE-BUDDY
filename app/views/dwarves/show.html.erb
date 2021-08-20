@@ -5,8 +5,8 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <% i = 0 %>
-      <% n = @dwarf.photos.count %>
+      <% i = 1 %>
+      <% n = @dwarf.photos.count - 1 %>
       <%= cl_image_tag @dwarf.photos[0].key, class:"d-block" %>
     </div>
     <% n.times do %>
