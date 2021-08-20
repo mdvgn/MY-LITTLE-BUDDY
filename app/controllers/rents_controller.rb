@@ -19,6 +19,17 @@ class RentsController < ApplicationController
     end
   end
 
+  def edit
+    @rent = Rent.find(params[:id])
+  end
+
+  def update
+    @rent = Rent.find(params[:id])
+    @rent.update(rent_params)
+
+    redirect_to rents_path(current_user)
+  end
+
   def destroy
     @rent = Rent.find(params[:id])
     @rent.destroy
@@ -30,6 +41,6 @@ class RentsController < ApplicationController
   private
 
   def rent_params
-    params.require(:rent).permit(:start_date, :end_date, :dwarf_id)
+    params.require(:rent).permit(:start_date, :end_date, :dwarf_id, :review, :rating)
   end
 end
