@@ -2,7 +2,7 @@
   <div class="rent">
     <div class="rent-form">
       <% dwarf = Dwarf.find(params[:dwarf_id]) %>
-      <h1>Louer <%= dwarf.nickname %></h1>
+      <h1 id="price" data-price-per-hour="<%=dwarf.price_per_hour%>">Louer <%= dwarf.nickname %></h1>
       <hr>
       <%= simple_form_for [@dwarf, @rent] do |f| %>
         <h2>Date de début</h2>
@@ -14,6 +14,8 @@
         <hr>
         <%= link_to 'Back to dwarf collection', dwarves_path, class: "btn btn-warning"  %>
       <% end %>
+      <br>
+    <h1 class='text-center'><span id="prout">0</span><span>$</span> </h1>
     </div>
     <div class="rent-card">
     <%= render 'shared/card', dwarf: dwarf%>
