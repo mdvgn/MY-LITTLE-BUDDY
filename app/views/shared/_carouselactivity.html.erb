@@ -1,0 +1,108 @@
+<section>
+<div class="titre-1">
+<h1>Que faire avec ton nain?</h1>
+</div>
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 10</div>
+    <img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629453010/y0l7vdv3r7jfay6zggmg.jpg" class="activityimg" style="width:100%">
+    <div class="text">Fiesta naine!</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 10</div>
+    <img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629453030/ralisgx3fppepo0upyjs.jpg" class="activityimg" style="width:100%">
+    <div class="text">Lancé de nain!</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 10</div>
+    <img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629453059/pupydlpnnty4qqdlvyjc.jpg" class="activityimg" style="width:100%">
+    <div class="text">Animation enterrements!</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 10</div>
+    <img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629465640/w40eyhufdr5eupntmqee.jpg" class="activityimg"" style="width:100%">
+    <div class="text">Football!</div>
+  </div>  
+
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 10</div>
+    <img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629453115/acv1avydwgw4327hyqqr.jpg" class="activityimg" style="width:100%">
+    <div class="text">(Petit) Homme-canon</div>
+  </div>
+
+  
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 10</div>
+    <img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629453165/eznh8hj1s3a1bqxm9ndf.jpg" class="activityimg" style="width:100%">
+    <div class="text">Lancé de nain!</div>
+  </div>
+
+  
+  <div class="mySlides fade">
+    <div class="numbertext">7 / 10</div>
+    <img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629453189/tq6izlepm9ajr23rgqhp.jpg" class="activityimg" style="width:100%">
+    <div class="text">Combat de nains!</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">8 / 10</div>
+    <img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629453213/mgrrbjkfzgpn0sn0fdzg.jpg" class="activityimg" style="width:100%">
+    <div class="text">Lancé de nain!</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">9 / 10</div>
+    <img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629453244/g4d5pq8avgtd0xybgw23.jpg" class="activityimg" style="width:100%">
+    <div class="text">Des nains et plus encore!</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">10 / 10</div>
+    <img src="http://res.cloudinary.com/dqyvlxybo/image/upload/v1629453279/qswvtdv7arphrkw59lh2.jpg" class="activityimg" style="width:100%">
+    <div class="text">La joie du nain!</div>
+  </div>
+
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+  <span class="dot" onclick="currentSlide(9)"></span>
+  <span class="dot" onclick="currentSlide(10)"></span>
+</div>
+</section>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 6000);
+}
+</script>
