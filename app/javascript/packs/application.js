@@ -38,5 +38,4 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   moveSearchbar();
   showNavbar();
-  fitMapToMarkers();
 });
