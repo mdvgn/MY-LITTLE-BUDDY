@@ -24,7 +24,7 @@ class RentsController < ApplicationController
     @rent.destroy
 
     # no need for app/views/rents/destroy.html.erb
-    redirect_to user_rents_path(current_user.id)
+    redirect_to rents_path(current_user)
   end
 
   private
