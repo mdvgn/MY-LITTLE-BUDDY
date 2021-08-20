@@ -1,6 +1,7 @@
 class Dwarf < ApplicationRecord
   include PgSearch::Model
   belongs_to :user
+  has_many :rents
   has_many :dwarf_skills, dependent: :destroy
   has_many :skills, through: :dwarf_skills
   has_many :reviews, through: :rent
