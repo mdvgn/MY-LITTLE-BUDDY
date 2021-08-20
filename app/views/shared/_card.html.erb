@@ -28,7 +28,7 @@
         <% end %>
   <% if current_user && dwarf.user_id != current_user.id  %>
     <div class="hire-btn">
-      <%= link_to 'Hire me', new_dwarf_rent_path(dwarf.id), class: "btn btn-primary"  %>
+      <%= link_to 'Loue-moi!', new_dwarf_rent_path(dwarf.id), class: "btn btn-primary"  %>
     </div>
   <% end  %>
     </div>

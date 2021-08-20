@@ -58,10 +58,10 @@
         <br>
           <% if current_user && @dwarf.user_id != current_user.id  %>
         <div class="text-center">
-          <%= link_to 'Hire me', new_dwarf_rent_path(@dwarf.id), class: "btn btn-primary", id: "show-hire-btn"  %>
+          <%= link_to 'Loue-moi!', new_dwarf_rent_path(@dwarf.id), class: "btn btn-primary", id: "show-hire-btn"  %>
         </div>
       <% end  %>
     </div>
   </div>
- <%= link_to 'Back to dwarf collection', dwarves_path, class: "btn btn-warning", id: "show-back-btn"  %>
+ <%= link_to 'Retour à la collection de nain', dwarves_path, class: "btn btn-warning", id: "show-back-btn"  %>
 </div>
