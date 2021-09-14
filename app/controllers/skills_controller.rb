@@ -1,6 +1,6 @@
 class SkillsController < ApplicationController
   class ReviewsController < ApplicationController
-
+skip_before_action :authenticate_user!
   def index
     @skills = Skill.all
   end

@@ -1,4 +1,5 @@
 class DwarfSkillsController < ApplicationController
+skip_before_action :authenticate_user!
   def new
     @dwarf = Dwarf.find(params[:dwarf_id])
     @dwarf_skill = DwarfSkill.new

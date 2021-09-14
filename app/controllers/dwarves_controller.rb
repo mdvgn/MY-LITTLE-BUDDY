@@ -1,4 +1,5 @@
 class DwarvesController < ApplicationController
+skip_before_action :authenticate_user!
   def index
     search = params[:search]
 

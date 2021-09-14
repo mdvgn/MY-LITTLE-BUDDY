@@ -10,9 +10,13 @@
         <h2>Date de fin</h2>
         <%= f.datetime_field :end_date, as: :date%>
         <hr>
-        <%= f.submit 'Hire this midget', class: "btn btn-primary" %>
+        <% if current_user %>
+          <%= f.submit 'Réserve ce nain', class: "btn btn-primary" %>
+        <% else %>
+          <%= link_to "Créer ton compte", new_user_session_path, class: "btn btn-primary" %>
+        <% end %>
         <hr>
-        <%= link_to 'Back to dwarf collection', dwarves_path, class: "btn btn-warning"  %>
+        <%= link_to 'Retour à nôtre collection de petits hommes', dwarves_path, class: "btn btn-warning"  %>
       <% end %>
       <br>
     <div id="rent-price"><h1 class='text-center'><span id="prout">0</span><span>$</span> </h1></div>
